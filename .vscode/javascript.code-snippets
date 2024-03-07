@@ -1,0 +1,13 @@
+{
+	"Promise": {
+		"scope": "javascript",
+		"prefix": [
+			"promise"
+		],
+		"body": [
+			"return new Promise(function (resolve, reject) {",
+			"});"
+		],
+		"description": "A new promise return"
+	}
+}
