@@ -1,8 +1,9 @@
+const config = require('../config.json');
 const sfdc = require('../lib/sfdc');
 
 const logger = require('../lib/logger');
 const utils = require('../lib/utils');
-global.logger = utils.getLogger('getCurrentUserId');
+global.logger = utils.getLogger('target_userid');
 
 /**
  * Gets the current user Id from the connection
@@ -19,7 +20,7 @@ function getUserId(conn) {
     });
 }
 
-sfdc.login('durham')
+sfdc.login(config.salesforce.target)
     .then(getUserId)
     .catch(utils.handleError)
     .finally(utils.exit);

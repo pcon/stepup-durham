@@ -162,7 +162,7 @@ function work() {
     });
 }
 
-sfdc.login('trailhead')
+sfdc.login(config.salesforce.target)
     .then(bind)
     .then(work)
     .catch(utils.handleError)

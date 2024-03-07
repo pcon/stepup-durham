@@ -164,7 +164,7 @@ function work() {
     });
 }
 
-sfdc.login('raleigh')
+sfdc.login(config.salesforce.source)
     .then(bind)
     .then(work)
     .catch(utils.handleError);

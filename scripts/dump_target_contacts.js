@@ -1,9 +1,11 @@
+const config = require('../config.json');
+
 const sfdc = require('../lib/sfdc');
 const query = require('../lib/queries');
 
 const logger = require('../lib/logger');
 const utils = require('../lib/utils');
-global.logger = utils.getLogger('dump_durham_contacts');
+global.logger = utils.getLogger('dump_target_contacts');
 
 let query_bound, write_bound;
 
@@ -52,7 +54,7 @@ function work() {
     });
 }
 
-sfdc.login('durham')
+sfdc.login(config.salesforce.target)
     .then(bind)
     .then(work)
     .catch(utils.handleError)

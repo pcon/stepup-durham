@@ -1,0 +1,39 @@
+{
+    "salesforce": {
+        "sourceOrg": {
+            "username": "user@sourceorg.example.com",
+            "password": "",
+            "token": ""
+        },
+        "targetOrg": {
+            "username": "user@targetorg.example.com",
+            "password": "",
+            "token": ""
+        },
+        "source": "sourceOrg",
+        "target": "targetOrg"
+    },
+    "log_dir": "/path/to/logs/",
+    "data": {
+        "batch_size": 20,
+        "dir": "/path/to/data/",
+        "attachments": {
+            "src": "to_uplodad_attachments.json",
+            "dir": "attachments",
+            "default_owner": "005XXXXXXXXXXXXXXXX"
+        },
+        "contacts": {
+            "new": "2024XXXX_contacts.json",
+            "old": "2024XXXX_contacts.json",
+            "matched": "test_matchedContacts.json"
+        },
+        "notes": {
+            "src": "to_upload_notes.json",
+            "default_owner": "005XXXXXXXXXXXXXXXX"
+        }
+    },
+    "cache": {
+        "dir": "/path/to/cache/",
+        "expire": 7
+    }
+}

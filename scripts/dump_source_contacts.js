@@ -1,3 +1,4 @@
+const config = require('../config.json');
 const lodash = require('lodash');
 
 const sfdc = require('../lib/sfdc');
@@ -5,7 +6,7 @@ const query = require('../lib/queries');
 
 const logger = require('../lib/logger');
 const utils = require('../lib/utils');
-global.logger = utils.getLogger('dump_raleigh_contacts');
+global.logger = utils.getLogger('dump_source_contacts');
 
 let query_bulk_bound, query_bound, write_bound;
 
@@ -189,7 +190,7 @@ function work() {
     });
 }
 
-sfdc.login('raleigh')
+sfdc.login(config.salesforce.source)
     .then(bind)
     .then(work)
     .catch(utils.handleError)
